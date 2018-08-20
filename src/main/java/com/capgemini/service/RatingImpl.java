@@ -32,7 +32,7 @@ public class RatingImpl implements Rating {
 
 			sum = sum + rating;
 		}
-		float avgRating = sum / id.size();
+		float avgRating = (float)sum / id.size();
 		Product product = ratingRepository.findProduct(pId);
 
 		product.setAverageRating(avgRating);
@@ -60,7 +60,7 @@ public class RatingImpl implements Rating {
 			float avgRating = ratingRepository.getProductAvgRating(i);
 			sum = sum + avgRating;
 		}
-		float avgRating = sum / id.size();
+		float avgRating = (float)sum / id.size();
 		Merchant merchant = ratingRepository.findMerchant(mId);
 		merchant.setAverageRating(avgRating);
 		ratingRepository.save(merchant);
